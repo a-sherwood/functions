@@ -8,9 +8,11 @@ let qs = require("qs");
 exports.handler = function(event, context, callback) {
   callback(null, {
     statusCode: 200,
-    body: translate.translate(
-      qs.parse(event.body).text
-    )
+    body: JSON.stringify({
+      text: translate.translate(qs.parse(event.body).text),
+      response_type: "in_channel"
+    }),
+    headers: { "Content-Type": "application/json" }
   });
   // let body = qs.parse(event.body);
   // fetch(body.response_url, {
@@ -18,5 +20,4 @@ exports.handler = function(event, context, callback) {
   //   body: translate.translate(body.text),
   //   headers: { "Content-Type": "text/plain" }
   // })
-  
 };
