@@ -13,6 +13,8 @@
     "netlify-lambda": "^0.4.0"
   },
   "dependencies": {
-    "moji-translate": "^1.0.8"
+    "moji-translate": "^1.0.8",
+    "node-fetch": "^2.6.0",
+    "qs": "^6.9.1"
   }
 }
