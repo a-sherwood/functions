@@ -9,7 +9,7 @@ exports.handler = function(event, context, callback) {
   callback(null, {
     statusCode: 200,
     body: translate.translate(
-      qs.parse(body).text
+      qs.parse(event.body).text
     )
   });
   // let body = qs.parse(event.body);
